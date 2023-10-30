@@ -1,5 +1,11 @@
+# intrinsic-python3
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+- Fork of <a href="https://github.com/seanbell/intrinsic" target="_blank">https://github.com/seanbell/intrinsic <i class="fa fa-external-link" style="font-size:12px"></i></a> 
+- in *Python3*
+
 Intrinsic Images in the Wild
-============================
+----------------------------
 
 This repository contains the decomposition algorithm presented in our
 [paper](http://intrinsic.cs.cornell.edu):
@@ -29,7 +35,6 @@ repository on Github.
 
 The dataset is hosted at http://intrinsic.cs.cornell.edu/.
 
-
 Dependencies
 ------------
 
@@ -38,17 +43,19 @@ The following libraries are needed:
 - Eigen (http://eigen.tuxfamily.org/)
   On Ubuntu, you can install with: `sudo apt-get install libeigen3-dev`
 
-- Python 2.7
+- Python 2.7 -> Python 3.8
 
 - Python packages (newer packages will likely work, though these are the exact
   versions that I used):
 
-      PIL==1.1.7
-      cython==0.19.2
-      numpy==1.8.0
-      scipy==0.13.2
-      scikit-image==0.9.3
-      scikit-learn==0.14.1
+  | previous | updated |
+  | -------- | ------- |
+  | PIL==1.17 | Pillow==10.0.1 |
+  | cython==0.19.2 | Cython==3.0.4 |
+  | numpy==1.8.0 | numpy==1.24.4 |
+  | scipy==0.13.2 | scipy==1.10.1 |
+  | scikit-image==0.9.3 | scikit-image==0.21.0 |
+  | scikit-learn==0.14.1 | scikit-learn==1.3.2 |
 
 
 Compile
