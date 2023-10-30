@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 import gzip
-import cPickle
+import _pickle as cPickle
 import numpy as np
 
 from ..density import ProbDensityHistogram
@@ -61,8 +61,8 @@ class ProbAbsoluteReflectance(object):
             path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
             if path not in sys.path:
                 sys.path.append(path)
-
-            self.density = cPickle.load(gzip.open(data_filename, "rb"))
+            
+            self.density = cPickle.load(gzip.open(data_filename, "rb"), encoding='latin1')
 
         if self.params.logging:
             print("loaded reflectances")

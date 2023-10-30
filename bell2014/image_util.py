@@ -1,8 +1,9 @@
 import os
 import numpy as np
-from scipy.misc import imread, imsave
+from imageio import imread, imsave
 from scipy.ndimage import gaussian_filter
-from skimage.filter import denoise_bilateral
+from skimage.restoration import denoise_bilateral
+
 
 # relative luminance for sRGB:
 RGB_TO_Y = np.array([0.2126, 0.7152, 0.0722])
@@ -11,7 +12,7 @@ RGB_TO_Y = np.array([0.2126, 0.7152, 0.0722])
 def load(filename, is_srgb=True):
     if not filename:
         raise ValueError("Empty filename")
-    image = imread(filename).astype(np.float) / 255.0
+    image = imread(filename).astype(np.float64) / 255.0
     if is_srgb:
         return srgb_to_rgb(image)
     else:
@@ -375,7 +376,7 @@ DISTINCT_COLORS = np.array(
         "c0ff9b", "37c78a", "0094b4", "003f76", "788aec", "dbaaff", "650059",
         "7b0038", "140700", "a19140", "527d39", "5b9e82", "005162", "001f3b",
         "001cb6", "cb86ff", "ff9af2", "44001e",
-    ]], dtype=np.float
+    ]], dtype=np.float64
 )
 DISTINCT_COLORS = DISTINCT_COLORS / 255.0
 DISTINCT_COLORS.setflags(write=False)
